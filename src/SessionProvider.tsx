@@ -1,7 +1,7 @@
 import { getAuth, onIdTokenChanged, type User } from 'firebase/auth'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { firebaseApp } from './firebase'
+import { initializeAppWrapper } from './firebase'
 
 type AuthApiProviderType = {
   readonly user?: User | null
@@ -23,7 +23,7 @@ export const Session: React.FC<{ children: React.ReactNode }> = ({
   const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
-    const auth = getAuth(firebaseApp)
+    const auth = getAuth(initializeAppWrapper())
 
     const unsubscribe = onIdTokenChanged(auth, (authUser) => {
       setUser(authUser)

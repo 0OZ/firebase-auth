@@ -1,6 +1,8 @@
+import type { FirebaseOptions } from 'firebase/app'
+
 import { getApps, initializeApp } from 'firebase/app'
 
-const defaultConfig = {
+const defaultConfig: FirebaseOptions = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
@@ -10,11 +12,6 @@ const defaultConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 }
 
-
-// Initialize Firebase
-const firebaseApp =
-  getApps().length === 0 ? initializeApp(defaultConfig) : getApps()[0]
-
 const initializeAppWrapper = () => initializeApp(defaultConfig)
+export { initializeAppWrapper }
 
-export { firebaseApp, initializeAppWrapper }
