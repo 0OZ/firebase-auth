@@ -5,7 +5,6 @@ import { initializeAppWrapper } from './firebase'
 
 type AuthApiProviderType = {
   readonly user?: User | null
-  readonly isLoggedIn?: boolean
 }
 
 export const SessionProviderCtx = React.createContext<AuthApiProviderType>({})
