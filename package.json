@@ -1,0 +1,22 @@
+{
+  "name": "@as/firebase-auth",
+  "version": "1.0.0-next",
+  "main": "src/index.ts",
+  "private": true,
+  "scripts": {
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "lint-fix": "eslint src --ext .ts,.tsx,.js,.jsx --fix"
+  },
+  "dependencies": {
+    "firebase": "10.0.0",
+    "next": "13.4.9",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@monorepo/eslint-config": "workspace:*",
+    "@types/node": "^20.3.3",
+    "@types/react": "^18.2.14",
+    "eslint": "8.44.0",
+    "typescript": "^5.1.6"
+  }
+}
