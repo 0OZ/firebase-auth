@@ -14,4 +14,3 @@ const defaultConfig: FirebaseOptions = {
 
 const initializeAppWrapper = () => initializeApp(defaultConfig)
 export { initializeAppWrapper }
-
